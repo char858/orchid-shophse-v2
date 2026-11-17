@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project Orchid is a value investing–inspired mock fund. Step inside our Singapore shophouse to explore our philosophy and company research.">
+  <meta name="theme-color" content="#160f17">
+  <title>Project Orchid</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./street.js" defer></script>
+  <script src="./research.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="exterior" id="street" aria-labelledby="hero-title">
+      <div class="street-view">
+        <div class="scene" id="scene">
+          <img class="facade" src="./shophouse.webp" alt="" width="1672" height="941" fetchpriority="high">
+          <div class="street-walker walker-one" aria-hidden="true"><div class="walker-pose"></div></div>
+          <div class="street-walker walker-two" aria-hidden="true"><div class="walker-pose"></div></div>
+          <div class="street-car sedan-one" aria-hidden="true"><img src="./sedan.webp" alt=""></div>
+          <div class="street-car sedan-two" aria-hidden="true"><img src="./sedan.webp" alt=""></div>
+          <a class="scene-link office-link" href="#philosophy" data-enter="office"><span>Upstairs office</span></a>
+          <a class="scene-link door-link" href="#research" data-enter="door"><span>Research library</span></a>
+        </div>
+      </div>
+      <header class="site-header hero-header wrap">
+        <a class="wordmark" href="./">Project Orchid</a>
+        <nav aria-label="Main navigation">
+          <a href="#philosophy">Philosophy</a>
+          <a href="#research">Research</a>
+        </nav>
+      </header>
+      <div class="hero-copy wrap">
+        <h1 id="hero-title">Project Orchid</h1>
+        <p>A value investing–inspired mock fund.</p>
+        <a class="entry-link" href="#research" data-enter="door">Explore the research <span aria-hidden="true">→</span></a>
+      </div>
+      <button class="motion-toggle" type="button" hidden>Pause street animation</button>
+    </section>
+
+    <section class="philosophy wrap" id="philosophy" aria-labelledby="philosophy-title" tabindex="-1">
+      <div>
+        <p class="floor-label">Upstairs office</p>
+        <h2 id="philosophy-title">Investment philosophy</h2>
+      </div>
+      <p>Project Orchid looks for businesses whose market prices leave room for a conservative estimate of what they own and what they can earn. Each note sets out the case, the assumptions behind the valuation, and what could change the conclusion.</p>
+    </section>
+
+    <section class="research" id="research" aria-labelledby="research-title" tabindex="-1">
+      <div class="library-entrance">
+        <div class="wrap">
+          <p class="floor-label">Ground floor</p>
+          <h2 id="research-title">Research library</h2>
+          <p>Company write-ups and downloadable reports.</p>
+        </div>
+      </div>
+      <div class="wrap research-shelf">
+        <noscript><p>Enable JavaScript to browse the research library.</p></noscript>
+        <div id="research-list" class="research-list" aria-live="polite"><p class="status">Loading research…</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer wrap">
+    <span>Project Orchid</span>
+    <a href="#street">Back to the street <span aria-hidden="true">↑</span></a>
+  </footer>
+</body>
+</html>
