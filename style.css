@@ -70,23 +70,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 .door-link { left: 58.8%; top: 60.6%; width: 13.5%; height: 24%; }
 .motion-toggle { position: absolute; z-index: 2; bottom: .9rem; right: max(1rem, 2.625vw); padding: .44rem .6rem; background: #170f19de; border: 1px solid #c39a846e; color: var(--paper); font: .75rem/1.15 var(--sans); cursor: pointer; }
 .motion-toggle:focus-visible { outline: 2px solid white; outline-offset: 3px; }
-.street-car { position: absolute; z-index: 2; pointer-events: none; width: 24.5%; left: 0; bottom: 2.2%; animation: drive 15s linear infinite; }
-.street-car img { position: relative; display: block; width: 100%; height: auto; filter: brightness(.83) saturate(.78) drop-shadow(0 6px 5px #0c0913a8); }
-.street-car::before { content:""; position: absolute; bottom:-9%; left:69%; width:68%; height:18%; transform:skewX(23deg); background:radial-gradient(ellipse at left, #f2b8777d, transparent 74%); }
-.sedan-one { animation-delay: -6.1s; }
-.sedan-two { animation-delay: -12.6s; filter: hue-rotate(165deg) brightness(.8); bottom: 2.75%; }
-@keyframes drive {
-  0%, 9% { transform: translateX(-115%); }
-  73%, 100% { transform: translateX(450%); }
+.street-car, .street-walker { display: none; }
+.street-actors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-.street-walker { position: absolute; z-index: 1; left: 0; bottom: 9.6%; width: 8%; height: 19.1%; animation: walk-across 38s linear infinite; pointer-events: none; }
-.walker-pose { height:100%; background-image: url("./walker.webp"); background-size: 400% 100%; animation: steps-cycle .88s steps(4,end) infinite; filter: brightness(.76) saturate(.76) drop-shadow(0 3px 2px #1209098a); }
-.walker-one { animation-delay: -14s; }
-.walker-two { animation-duration: 47s; animation-delay: -32s; animation-direction: reverse; bottom: 10.4%; }
-.walker-two .walker-pose { transform: scaleX(-1) scale(.94); transform-origin: center bottom; filter: hue-rotate(130deg) brightness(.64) saturate(.55); }
-@keyframes walk-across { from { transform: translateX(-108%); } to { transform: translateX(1360%); } }
-@keyframes steps-cycle { from { background-position: 0 0; } to { background-position: 133.333% 0; } }
-.exterior.paused :is(.street-car,.street-walker,.walker-pose), .exterior.offscreen :is(.street-car,.street-walker,.walker-pose) { animation-play-state: paused; }
 .philosophy { border-top: 1px solid var(--rule); display: grid; grid-template-columns: .95fr 1fr; align-items: center; gap: clamp(1rem, 5vw, 6rem); padding-block: clamp(3rem, 7vw, 7rem); }
 .floor-label { font-size: .82rem; margin-bottom: .8rem; color: var(--lilac); }
 .philosophy h2, .research h2, .report-body h2 { font-size: clamp(2.65rem, 5.65vw, 6rem); line-height: .93; letter-spacing: -.047em; margin: 0 0 .25em; }
@@ -120,5 +111,4 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button { transition: none; }
-  .street-car, .street-walker, .walker-pose { animation-play-state: paused; }
 }
